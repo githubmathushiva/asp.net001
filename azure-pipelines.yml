@@ -37,3 +37,10 @@ steps:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+- task: AzureWebApp@1
+  inputs:
+    azureSubscription: 'Free Trial (47069e1c-8716-4b89-83be-902a243dfa3d)'
+    appType: 'webApp'
+    appName: 'sampleshanoj'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    deploymentMethod: 'auto'
